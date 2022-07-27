@@ -1,0 +1,62 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>rostrowicki</title>
+        <link>http://rostrowicki.github.io/</link>
+        <description>This is my cool site</description>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</lastBuildDate>
+            <atom:link href="http://rostrowicki.github.io/index.xml" rel="self" type="application/rss+xml" />
+        <item>
+    <title>Kubernetes Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</link>
+    <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Docker Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/docker-cheatsheet/</link>
+    <pubDate>Tue, 26 Jul 2022 15:07:05 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/docker-cheatsheet/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Minikube Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/minikube-cheatsheet/</link>
+    <pubDate>Tue, 26 Jul 2022 15:06:59 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/minikube-cheatsheet/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Entity Framework Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/ef-cheatsheet/</link>
+    <pubDate>Tue, 26 Jul 2022 15:06:41 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/ef-cheatsheet/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Hugo Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/hugo-cheatsheet/</link>
+    <pubDate>Mon, 25 Jul 2022 14:49:26 &#43;0200</pubDate>
+    <author>Rob</author>
+    <guid>http://rostrowicki.github.io/posts/hugo-cheatsheet/</guid>
+    <description><![CDATA[HUGO Cheatsheet Project Homepage: https://gohugo.io/
+Content &gt; hugo new posts/my-first-post.md Drafts do not get deployed; once you finish a post, update the header of the post to say draft: false.
+Markdown Cheatsheet
+Commands # Hugo server &gt; hugo server -D # Build static pages: &gt; hugo -D Installation Follow instructions: https://gohugo.io/getting-started/installing
+Releases: https://github.com/gohugoio/hugo/releases
+# verify installation &gt; hugo version # Create new site &gt; hugo new site [SITE_NAME] ]]></description>
+</item>
+<item>
+    <title>Hello World</title>
+    <link>http://rostrowicki.github.io/posts/hello-world/</link>
+    <pubDate>Mon, 25 Jul 2022 14:42:33 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/hello-world/</guid>
+    <description><![CDATA[Hello world!]]></description>
+</item>
+</channel>
+</rss>
