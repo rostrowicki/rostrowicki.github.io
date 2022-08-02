@@ -11,7 +11,7 @@
     <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
     <author>Author</author>
     <guid>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[Namespaces #List namespaces &gt;kubens #Change namespace to prod &gt;kubens prod #Create namespace test &gt;kubectl create ns test Help / Debug # Retrieve detailed state of pod test kubectl describe pod test # Get all possible attributes of a resource kubectl explain pod --recursive # Open a bash terminal in pod app kubectl exec -it app -- bash # NB : The flag --help provide help of any command Deploy / Expose # Create a deployment named web, using image nginx into prod namespace kubectl create -n prod deploy web --image=nginx # Expose port 80 of deployment web with an internal service named front kubectl expose deploy/web --port=80 --name=front # Retrieve logs of pods with tag app=web kubetail -l app=web # Open a tunnel listening on 127.]]></description>
 </item>
 <item>
     <title>Docker Cheatsheet</title>
