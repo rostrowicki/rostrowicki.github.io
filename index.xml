@@ -3,9 +3,19 @@
         <title>rostrowicki</title>
         <link>http://rostrowicki.github.io/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 07 Aug 2022 13:53:33 &#43;0200</lastBuildDate>
             <atom:link href="http://rostrowicki.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Rabbitmq Cheatsheet</title>
+    <link>http://rostrowicki.github.io/posts/rabbitmq-cheatsheet/</link>
+    <pubDate>Sun, 07 Aug 2022 13:53:33 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/rabbitmq-cheatsheet/</guid>
+    <description><![CDATA[Prerequiesites Install Docker Desktop
+Run Docker image docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management Management panel:
+http://localhost:15672/#/ ]]></description>
+</item>
+<item>
     <title>Kubernetes Cheatsheet</title>
     <link>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</link>
     <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
