@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Fedora Home Server - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Fedora Home Server" />
-<meta property="og:description" content="How to How to install, start and connect to SSH Server on Fedora Linux &gt; sudo systemctl status sshd # if inactive... &gt; sudo systemctl enable sshd &gt; sudo systemctl start sshd # now should be active # try to connect from other machine.. &gt; ssh [remote_user_name]@x.x.x.x Issues Cannot connect to docker daemon # check status &gt; sudo service docker status # if not running then.. &gt; sudo service docker start " />
+<meta property="og:description" content="How to How to install, start and connect to SSH Server on Fedora Linux &gt; sudo systemctl status sshd # if inactive... &gt; sudo systemctl enable sshd &gt; sudo systemctl start sshd # now should be active # try to connect from other machine.. &gt; ssh [remote_user_name]@x.x.x.x How to install docker-compose &gt; sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose &gt; sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose &gt; sudo chmod &#43;x /usr/bin/docker-compose Start PiHole &gt; docker-compose up -d Issues Cannot connect to docker daemon # check status &gt; sudo service docker status # if not running then." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://rostrowicki.github.io/posts/fedora-home-server/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-09-27T18:02:44+02:00" />
@@ -13,7 +13,7 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Fedora Home Server"/>
-<meta name="twitter:description" content="How to How to install, start and connect to SSH Server on Fedora Linux &gt; sudo systemctl status sshd # if inactive... &gt; sudo systemctl enable sshd &gt; sudo systemctl start sshd # now should be active # try to connect from other machine.. &gt; ssh [remote_user_name]@x.x.x.x Issues Cannot connect to docker daemon # check status &gt; sudo service docker status # if not running then.. &gt; sudo service docker start "/>
+<meta name="twitter:description" content="How to How to install, start and connect to SSH Server on Fedora Linux &gt; sudo systemctl status sshd # if inactive... &gt; sudo systemctl enable sshd &gt; sudo systemctl start sshd # now should be active # try to connect from other machine.. &gt; ssh [remote_user_name]@x.x.x.x How to install docker-compose &gt; sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose &gt; sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose &gt; sudo chmod &#43;x /usr/bin/docker-compose Start PiHole &gt; docker-compose up -d Issues Cannot connect to docker daemon # check status &gt; sudo service docker status # if not running then."/>
 <meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
 <meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,7 +28,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/rostrowicki.github.io\/posts\/fedora-home-server\/"
-        },"genre": "posts","wordcount":  71 ,
+        },"genre": "posts","wordcount":  149 ,
         "url": "http:\/\/rostrowicki.github.io\/posts\/fedora-home-server\/","datePublished": "2022-09-27T18:02:44+02:00","dateModified": "2022-09-27T18:02:44+02:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -70,7 +70,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Fedora Home Server</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-27">2022-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;71 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-09-27">2022-09-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;149 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -80,10 +80,13 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#how-to-install-start-and-connect-to-ssh-server-on-fedora-linux">How to install, start and connect to SSH Server on Fedora Linux</a></li>
+    <li><a href="#how-to-install-docker-compose">How to install docker-compose</a></li>
+    <li><a href="#start-pihole">Start PiHole</a></li>
   </ul>
 
   <ul>
     <li><a href="#cannot-connect-to-docker-daemon">Cannot connect to docker daemon</a></li>
+    <li><a href="#pihole-docker-image-is-not-running">PiHole docker image is not running</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h1 id="how-to">How to</h1>
@@ -95,12 +98,26 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># now should be active</span>
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># try to connect from other machine..</span>
 </span></span><span style="display:flex;"><span>&gt; ssh <span style="color:#f92672">[</span>remote_user_name<span style="color:#f92672">]</span>@x.x.x.x
-</span></span></code></pre></div><h1 id="issues">Issues</h1>
+</span></span></code></pre></div><h2 id="how-to-install-docker-compose">How to install docker-compose</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>&gt; sudo curl -L <span style="color:#e6db74">&#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-</span><span style="color:#66d9ef">$(</span>uname -s<span style="color:#66d9ef">)</span><span style="color:#e6db74">-</span><span style="color:#66d9ef">$(</span>uname -m<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>  -o /usr/local/bin/docker-compose
+</span></span><span style="display:flex;"><span>&gt; sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+</span></span><span style="display:flex;"><span>&gt; sudo chmod +x /usr/bin/docker-compose
+</span></span></code></pre></div><h2 id="start-pihole">Start PiHole</h2>
+<pre tabindex="0"><code>&gt; docker-compose up -d
+</code></pre><h1 id="issues">Issues</h1>
 <h2 id="cannot-connect-to-docker-daemon">Cannot connect to docker daemon</h2>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># check status</span>
 </span></span><span style="display:flex;"><span>&gt; sudo service docker status
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># if not running then..</span>
 </span></span><span style="display:flex;"><span>&gt; sudo service docker start
+</span></span></code></pre></div><h2 id="pihole-docker-image-is-not-running">PiHole docker image is not running</h2>
+<p>change <code>#DNSStubListener=yes</code> to <code>DNSStubListener=no</code> (make sure you uncomment the line).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo vi /etc/systemd/resolved.conf <span style="color:#f92672">(</span>make changes based on above<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>$ sudo service systemd-resolved restart
+</span></span><span style="display:flex;"><span>$ sudo systemctl disable systemd-resolved.service
+</span></span><span style="display:flex;"><span>$ sudo systemctl stop systemd-resolved
+</span></span><span style="display:flex;"><span>$ sudo rm /etc/resolv.conf
+</span></span><span style="display:flex;"><span>$ sudo shutdown now -r
 </span></span></code></pre></div></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
