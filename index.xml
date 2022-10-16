@@ -11,7 +11,7 @@
     <pubDate>Tue, 27 Sep 2022 18:02:44 &#43;0200</pubDate>
     <author>Author</author>
     <guid>http://rostrowicki.github.io/posts/fedora-home-server/</guid>
-    <description><![CDATA[How to How to install, start and connect to SSH Server on Fedora Linux &gt; sudo systemctl status sshd # if inactive... &gt; sudo systemctl enable sshd &gt; sudo systemctl start sshd # now should be active # try to connect from other machine.. &gt; ssh [remote_user_name]@x.x.x.x How to install docker-compose &gt; sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose &gt; sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose &gt; sudo chmod +x /usr/bin/docker-compose Start PiHole &gt; docker-compose up -d Issues Cannot connect to docker daemon # check status &gt; sudo service docker status # if not running then.]]></description>
+    <description><![CDATA[How to How to install, start and connect to SSH Server on Fedora Linux $ sudo systemctl status sshd # if inactive... $ sudo systemctl enable sshd $ sudo systemctl start sshd # now should be active # try to connect from other machine.. $ ssh [remote_user_name]@x.x.x.x How to install docker-compose $ sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose $ sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose $ sudo chmod +x /usr/bin/docker-compose Start PiHole $ docker-compose up -d Issues Cannot connect to docker daemon # check status $ sudo service docker status # if not running then.]]></description>
 </item>
 <item>
     <title>Rabbitmq Cheatsheet</title>
@@ -29,7 +29,7 @@ http://localhost:15672/#/ ]]></description>
     <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
     <author>Rob</author>
     <guid>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</guid>
-    <description><![CDATA[Most common commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] # deletes deployment resource that run pod kubectl delete deployment [name-of-deployment] kubectl port-forward [pod-name] [external-port]::[internal-port] kubectl expose ... # expose a port kubectl create [resource] # create resource kubectl apply [resource] # create/modify resource Aliasing kubectl PowerShell Set-Alias -Name k -Value kubectl]]></description>
+    <description><![CDATA[Most common commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.pod.yml # deletes deployment resource that run pod kubectl delete deployment [name-of-deployment] kubectl port-forward [pod-name] [external-port]::[internal-port] kubectl expose ... # expose a port kubectl create [resource] # create resource kubectl create -f file.]]></description>
 </item>
 <item>
     <title>Docker Cheatsheet</title>
