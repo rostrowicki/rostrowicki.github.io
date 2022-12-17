@@ -4,16 +4,18 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Entity Framework Cheatsheet - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Entity Framework Cheatsheet" />
-<meta property="og:description" content="" />
+        <title>Entity Framework Migrations Cheatsheet - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Entity Framework Migrations Cheatsheet" />
+<meta property="og:description" content="Intro Entity Framework is a popular object-relational mapping (ORM) framework for .NET that allows developers to easily work with relational data using domain-specific objects. One of the key features of Entity Framework is its ability to manage database migrations, which allows you to update the structure of your database as your application evolves.
+Commands To use Entity Framework migrations, you need to use a set of commands that are provided by the Entity Framework tools." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://rostrowicki.github.io/posts/ef-cheatsheet/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T15:06:41+02:00" />
 <meta property="article:modified_time" content="2022-07-26T15:06:41+02:00" /><meta property="og:site_name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Entity Framework Cheatsheet"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Entity Framework Migrations Cheatsheet"/>
+<meta name="twitter:description" content="Intro Entity Framework is a popular object-relational mapping (ORM) framework for .NET that allows developers to easily work with relational data using domain-specific objects. One of the key features of Entity Framework is its ability to manage database migrations, which allows you to update the structure of your database as your application evolves.
+Commands To use Entity Framework migrations, you need to use a set of commands that are provided by the Entity Framework tools."/>
 <meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
 <meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -23,17 +25,17 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Entity Framework Cheatsheet",
+        "headline": "Entity Framework Migrations Cheatsheet",
         "inLanguage": "en-us",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/rostrowicki.github.io\/posts\/ef-cheatsheet\/"
-        },"genre": "posts","wordcount":  0 ,
+        },"genre": "posts","wordcount":  308 ,
         "url": "http:\/\/rostrowicki.github.io\/posts\/ef-cheatsheet\/","datePublished": "2022-07-26T15:06:41+02:00","dateModified": "2022-07-26T15:06:41+02:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Author"
+                "name": "Rob"
             },"description": ""
     }
     </script></head>
@@ -68,17 +70,49 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Entity Framework Cheatsheet</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;0 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;0 minutes&nbsp;</div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Entity Framework Migrations Cheatsheet</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Rob</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;308 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#intro">Intro</a></li>
+    <li><a href="#commands">Commands</a></li>
+    <li><a href="#outro">Outro</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="intro">Intro</h2>
+<p>Entity Framework is a popular object-relational mapping (ORM) framework for .NET that allows developers to easily work with relational data using domain-specific objects. One of the key features of Entity Framework is its ability to manage database migrations, which allows you to update the structure of your database as your application evolves.</p>
+<h2 id="commands">Commands</h2>
+<p>To use Entity Framework migrations, you need to use a set of commands that are provided by the Entity Framework tools. Here are some of the most commonly used Entity Framework migrations commands:</p>
+<p><strong>Add-Migration</strong>: This command is used to create a new migration that will update the structure of your database. For example:</p>
+<pre tabindex="0"><code>Add-Migration AddPhoneNumberColumn
+</code></pre><pre tabindex="0"><code>dotnet ef migrations add AddPhoneNumberColumn
+</code></pre><p>This command will create a new migration named &ldquo;AddPhoneNumberColumn&rdquo; that will add a new column to your database.</p>
+<p><strong>Update-Database</strong>: This command is used to apply the pending migrations to your database. For example:</p>
+<pre tabindex="0"><code>Update-Database
+</code></pre><pre tabindex="0"><code>dotnet ef database update
+</code></pre><p>This command will apply all the pending migrations to your database.</p>
+<p><strong>Remove-Migration</strong>: This command is used to remove the last migration from your project. For example:</p>
+<pre tabindex="0"><code>Remove-Migration
+</code></pre><pre tabindex="0"><code>dotnet ef migrations remove
+</code></pre><p>This command will remove the last migration from your project.</p>
+<p><strong>Script-Migration</strong>: This command is used to generate a SQL script that can be used to apply the pending migrations to your database. For example:</p>
+<pre tabindex="0"><code>Script-Migration -SourceMigration AddPhoneNumberColumn -OutputScript add_phone_number_column.sql
+</code></pre><pre tabindex="0"><code>dotnet ef migrations script AddPhoneNumberColumn
+</code></pre><p>This command will generate a SQL script named &ldquo;add_phone_number_column.sql&rdquo; that can be used to apply the &ldquo;AddPhoneNumberColumn&rdquo; migration to your database.</p>
+<p><strong>Get-Migrations</strong>: This command is used to list the migrations that have been applied to your database. For example:</p>
+<pre tabindex="0"><code>Get-Migrations
+</code></pre><pre tabindex="0"><code>dotnet ef migrations list
+</code></pre><p>This command will list all the migrations that have been applied to your database.</p>
+<h2 id="outro">Outro</h2>
+<p>By using these Entity Framework migrations commands, you can easily manage and update the structure of your database as your application evolves.</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -87,7 +121,7 @@
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Cheatsheet"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Cheatsheet"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Cheatsheet"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Cheatsheet"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Migrations Cheatsheet"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Migrations Cheatsheet"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Migrations Cheatsheet"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://rostrowicki.github.io/posts/ef-cheatsheet/" data-title="Entity Framework Migrations Cheatsheet"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>

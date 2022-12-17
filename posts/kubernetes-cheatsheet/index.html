@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Kubernetes Cheatsheet - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Kubernetes Cheatsheet" />
-<meta property="og:description" content="Most common commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.pod.yml # deletes deployment resource that run pod kubectl delete deployment [name-of-deployment] kubectl port-forward [pod-name] [external-port]::[internal-port] kubectl expose ... # expose a port kubectl create [resource] # create resource kubectl create -f file." />
+<meta property="og:description" content="Kubernetes is a powerful platform for deploying, scaling, and managing containerized applications. It allows you to easily deploy and manage applications across a cluster of servers, and provides features such as self-healing, automatic scaling, and rolling updates.
+There are several kubernetes commands that are commonly used to manage and interact with kubernetes clusters and resources. Here are some of the most useful and frequently used kubernetes commands:
+Most commonly used commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://rostrowicki.github.io/posts/kubernetes-cheatsheet/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T15:07:13+02:00" />
@@ -13,7 +15,9 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Kubernetes Cheatsheet"/>
-<meta name="twitter:description" content="Most common commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.pod.yml # deletes deployment resource that run pod kubectl delete deployment [name-of-deployment] kubectl port-forward [pod-name] [external-port]::[internal-port] kubectl expose ... # expose a port kubectl create [resource] # create resource kubectl create -f file."/>
+<meta name="twitter:description" content="Kubernetes is a powerful platform for deploying, scaling, and managing containerized applications. It allows you to easily deploy and manage applications across a cluster of servers, and provides features such as self-healing, automatic scaling, and rolling updates.
+There are several kubernetes commands that are commonly used to manage and interact with kubernetes clusters and resources. Here are some of the most useful and frequently used kubernetes commands:
+Most commonly used commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file."/>
 <meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
 <meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,7 +32,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/rostrowicki.github.io\/posts\/kubernetes-cheatsheet\/"
-        },"genre": "posts","wordcount":  363 ,
+        },"genre": "posts","wordcount":  469 ,
         "url": "http:\/\/rostrowicki.github.io\/posts\/kubernetes-cheatsheet\/","datePublished": "2022-07-26T15:07:13+02:00","dateModified": "2022-07-26T15:07:13+02:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -70,8 +74,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Kubernetes Cheatsheet</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Rob</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;363 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;469 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -81,7 +85,7 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#most-common-commands">Most common commands</a></li>
+        <li><a href="#most-commonly-used-commands">Most commonly used commands</a></li>
         <li><a href="#aliasing-kubectl">Aliasing kubectl</a></li>
         <li><a href="#linux">Linux</a></li>
         <li><a href="#namespaces">Namespaces</a></li>
@@ -92,7 +96,9 @@
     </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h3 id="most-common-commands">Most common commands</h3>
+            </div><div class="content" id="content"><p>Kubernetes is a powerful platform for deploying, scaling, and managing containerized applications. It allows you to easily deploy and manage applications across a cluster of servers, and provides features such as self-healing, automatic scaling, and rolling updates.</p>
+<p>There are several kubernetes commands that are commonly used to manage and interact with kubernetes clusters and resources. Here are some of the most useful and frequently used kubernetes commands:</p>
+<h3 id="most-commonly-used-commands">Most commonly used commands</h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>kubectl --help
 </span></span><span style="display:flex;"><span>kubectl version
 </span></span><span style="display:flex;"><span>kubectl cluster-info
@@ -112,7 +118,7 @@
 </span></span><span style="display:flex;"><span>kubectl create -f file.res_kind.yml <span style="color:#75715e"># --dry-run --validate=true</span>
 </span></span><span style="display:flex;"><span>                                    <span style="color:#75715e"># --save--config (if you want use apply in the future) it will save properties in yaml file annotations (recommended!)</span>
 </span></span><span style="display:flex;"><span>kubectl apply <span style="color:#f92672">[</span>resource<span style="color:#f92672">]</span>    <span style="color:#75715e"># create/modify resource</span>
-</span></span><span style="display:flex;"><span>kybectl apply -f file.res_type.yml
+</span></span><span style="display:flex;"><span>kybectl apply -f file.res_type.yml  <span style="color:#75715e"># most recommentded way of applying changes</span>
 </span></span><span style="display:flex;"><span>kubectl exec <span style="color:#f92672">[</span>pod-name<span style="color:#f92672">]</span> -it sh      <span style="color:#75715e"># execute interactive shell inside pod</span>
 </span></span><span style="display:flex;"><span>kubectl edit -f file.yml            <span style="color:#75715e"># edit file in terminal with vi (my default)</span>
 </span></span></code></pre></div><h3 id="aliasing-kubectl">Aliasing kubectl</h3>
@@ -169,7 +175,8 @@
 </span></span><span style="display:flex;"><span>kubectl create deploy web --image<span style="color:#f92672">=</span>nginx --dry-run<span style="color:#f92672">=</span>client -o yaml &gt; web.yml
 </span></span><span style="display:flex;"><span><span style="color:#75715e"># Edit deployment web</span>
 </span></span><span style="display:flex;"><span>kubectl edit deploy/web
-</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+</span></span></code></pre></div><p>These are just a few examples of the many kubernetes commands that are available. By learning and using these commands, you can easily manage and interact with kubernetes clusters and resources.</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">

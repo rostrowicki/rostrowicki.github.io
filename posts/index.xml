@@ -3,7 +3,27 @@
         <title>All Posts - rostrowicki</title>
         <link>http://rostrowicki.github.io/posts/</link>
         <description>All Posts | rostrowicki</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Tue, 27 Sep 2022 18:02:44 &#43;0200</lastBuildDate><atom:link href="http://rostrowicki.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 17 Dec 2022 17:33:49 &#43;0100</lastBuildDate><atom:link href="http://rostrowicki.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>csharp Boxing Unboxing</title>
+    <link>http://rostrowicki.github.io/posts/csharp-boxing-unboxing/</link>
+    <pubDate>Sat, 17 Dec 2022 17:33:49 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/csharp-boxing-unboxing/</guid>
+    <description><![CDATA[Boxing and unboxing are two important concepts in C# that allow you to convert between value types and reference types.
+Boxing is the process of converting a value type to a reference type. For example, you might want to store a value of an integer type in a variable of type object. To do this, you would need to box the integer value so that it can be stored in the object variable.]]></description>
+</item>
+<item>
+    <title>Alpine Home Server</title>
+    <link>http://rostrowicki.github.io/posts/alpine-home-server/</link>
+    <pubDate>Tue, 15 Nov 2022 18:49:54 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/alpine-home-server/</guid>
+    <description><![CDATA[Download Alpine Standard/Extended (I am using extended version) from its homepage.
+To create boot USB you can use Rufus.
+Installation is taking about 10 minutes. For the rest you can follow instruction in video or using below commands&hellip;
+&gt; df -h # uncomment community repository http://../v3.16/community &gt; vi /etc/apk/repositories # install htop &gt; apk add -update htop &gt; htop # install docker &gt; apk add --update docker docker-compose # start docker at startup &gt; rc-update add docker boot &gt; service docker start # or (better) &gt; reboot &gt; docker ps Install Pi-hole with https://gitlab.]]></description>
+</item>
+<item>
     <title>Fedora Home Server</title>
     <link>http://rostrowicki.github.io/posts/fedora-home-server/</link>
     <pubDate>Tue, 27 Sep 2022 18:02:44 &#43;0200</pubDate>
@@ -27,15 +47,19 @@ http://localhost:15672/#/ ]]></description>
     <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
     <author>Rob</author>
     <guid>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</guid>
-    <description><![CDATA[Most common commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.pod.yml # deletes deployment resource that run pod kubectl delete deployment [name-of-deployment] kubectl port-forward [pod-name] [external-port]::[internal-port] kubectl expose ... # expose a port kubectl create [resource] # create resource kubectl create -f file.]]></description>
+    <description><![CDATA[Kubernetes is a powerful platform for deploying, scaling, and managing containerized applications. It allows you to easily deploy and manage applications across a cluster of servers, and provides features such as self-healing, automatic scaling, and rolling updates.
+There are several kubernetes commands that are commonly used to manage and interact with kubernetes clusters and resources. Here are some of the most useful and frequently used kubernetes commands:
+Most commonly used commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.]]></description>
 </item>
 <item>
     <title>Docker Cheatsheet</title>
     <link>http://rostrowicki.github.io/posts/docker-cheatsheet/</link>
     <pubDate>Tue, 26 Jul 2022 15:07:05 &#43;0200</pubDate>
-    <author>Author</author>
+    <author>Rob</author>
     <guid>http://rostrowicki.github.io/posts/docker-cheatsheet/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[Docker is a popular platform for building, deploying, and running applications using containers. It allows developers to package their applications and dependencies into lightweight containers, which can then be easily deployed and run on any platform that supports Docker.
+There are several docker commands that are commonly used to manage and interact with Docker containers and images. Here are some of the most useful and frequently used docker commands:
+docker run: This command is used to run a new container from an image.]]></description>
 </item>
 <item>
     <title>Minikube Cheatsheet</title>
@@ -43,15 +67,17 @@ http://localhost:15672/#/ ]]></description>
     <pubDate>Tue, 26 Jul 2022 15:06:59 &#43;0200</pubDate>
     <author>Rob</author>
     <guid>http://rostrowicki.github.io/posts/minikube-cheatsheet/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[Minikube is a tool that allows you to run a single-node Kubernetes cluster locally on your machine. It is a great way to learn and experiment with Kubernetes without the need for a large, complex cluster.
+One of the key concepts of Minikube is the virtual machine (VM) that it runs on. Minikube uses a VM to create a self-contained environment in which to run the Kubernetes cluster. By default, Minikube uses the VirtualBox hypervisor to create the VM, but it can also use other hypervisors such as VMware Fusion and Hyper-V.]]></description>
 </item>
 <item>
-    <title>Entity Framework Cheatsheet</title>
+    <title>Entity Framework Migrations Cheatsheet</title>
     <link>http://rostrowicki.github.io/posts/ef-cheatsheet/</link>
     <pubDate>Tue, 26 Jul 2022 15:06:41 &#43;0200</pubDate>
-    <author>Author</author>
+    <author>Rob</author>
     <guid>http://rostrowicki.github.io/posts/ef-cheatsheet/</guid>
-    <description><![CDATA[]]></description>
+    <description><![CDATA[Intro Entity Framework is a popular object-relational mapping (ORM) framework for .NET that allows developers to easily work with relational data using domain-specific objects. One of the key features of Entity Framework is its ability to manage database migrations, which allows you to update the structure of your database as your application evolves.
+Commands To use Entity Framework migrations, you need to use a set of commands that are provided by the Entity Framework tools.]]></description>
 </item>
 <item>
     <title>Hugo Cheatsheet</title>

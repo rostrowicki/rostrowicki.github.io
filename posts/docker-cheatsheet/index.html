@@ -5,7 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>Docker Cheatsheet - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Docker Cheatsheet" />
-<meta property="og:description" content="" />
+<meta property="og:description" content="Docker is a popular platform for building, deploying, and running applications using containers. It allows developers to package their applications and dependencies into lightweight containers, which can then be easily deployed and run on any platform that supports Docker.
+There are several docker commands that are commonly used to manage and interact with Docker containers and images. Here are some of the most useful and frequently used docker commands:
+docker run: This command is used to run a new container from an image." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://rostrowicki.github.io/posts/docker-cheatsheet/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T15:07:05+02:00" />
@@ -13,7 +15,9 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker Cheatsheet"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="Docker is a popular platform for building, deploying, and running applications using containers. It allows developers to package their applications and dependencies into lightweight containers, which can then be easily deployed and run on any platform that supports Docker.
+There are several docker commands that are commonly used to manage and interact with Docker containers and images. Here are some of the most useful and frequently used docker commands:
+docker run: This command is used to run a new container from an image."/>
 <meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
 <meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -28,12 +32,12 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/rostrowicki.github.io\/posts\/docker-cheatsheet\/"
-        },"genre": "posts","wordcount":  0 ,
+        },"genre": "posts","wordcount":  293 ,
         "url": "http:\/\/rostrowicki.github.io\/posts\/docker-cheatsheet\/","datePublished": "2022-07-26T15:07:05+02:00","dateModified": "2022-07-26T15:07:05+02:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
-                "name": "Author"
+                "name": "Rob"
             },"description": ""
     }
     </script></head>
@@ -69,16 +73,36 @@
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker Cheatsheet</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;0 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;0 minutes&nbsp;</div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Rob</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-07-26">2022-07-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;293 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
-            </div><div class="content" id="content"></div><div class="post-footer" id="post-footer">
+            </div><div class="content" id="content"><p>Docker is a popular platform for building, deploying, and running applications using containers. It allows developers to package their applications and dependencies into lightweight containers, which can then be easily deployed and run on any platform that supports Docker.</p>
+<p>There are several docker commands that are commonly used to manage and interact with Docker containers and images. Here are some of the most useful and frequently used docker commands:</p>
+<p><strong>docker run</strong>: This command is used to run a new container from an image. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker run -d --name my-web-server -p 80:80 nginx
+</span></span></code></pre></div><p>This command will run a new container based on the nginx image, and it will expose port 80 on the host machine to port 80 on the container. The -d flag runs the container in detached mode, and the &ndash;name flag assigns a name to the container.</p>
+<p><strong>docker ps</strong>: This command lists all the running containers on your system. You can use the -a flag to list all containers, including those that have stopped. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker ps -a
+</span></span></code></pre></div><p><strong>docker stop</strong>: This command stops a running container. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker stop my-web-server
+</span></span></code></pre></div><p><strong>docker start</strong>: This command starts a stopped container. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker start my-web-server
+</span></span></code></pre></div><p><strong>docker rm</strong>: This command removes a container from your system. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rm my-web-server
+</span></span></code></pre></div><p><strong>docker pull</strong>: This command downloads an image from a Docker registry. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker pull ubuntu
+</span></span></code></pre></div><p><strong>docker images</strong>: This command lists all the images on your system. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker images
+</span></span></code></pre></div><p><strong>docker rmi</strong>: This command removes an image from your system. For example:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker rmi ubuntu
+</span></span></code></pre></div><p>These are just a few examples of the many docker commands that are available. By learning and using these commands, you can easily manage and interact with Docker containers and images on your system.</p>
+</div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
