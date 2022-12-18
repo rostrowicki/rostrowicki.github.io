@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Csharp Entity Framework - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Csharp Entity Framework" />
+<meta property="og:description" content="Entity Framework General Concepts Entity Framework is an object-relational mapper (ORM) that enables .NET developers to work with a database using domain-specific objects. It eliminates the need for most of the data-access code that developers usually need to write.
+Here&rsquo;s a high-level overview of how Entity Framework works:
+You design your domain model classes in your .NET application, with each class representing a table in your database.
+You use Entity Framework to create a mapping between your domain model classes and the corresponding tables in the database." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rostrowicki.github.io/posts/csharp-entity-framework/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-12-18T15:51:42+01:00" />
+<meta property="article:modified_time" content="2022-12-18T15:51:42+01:00" /><meta property="og:site_name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Csharp Entity Framework"/>
+<meta name="twitter:description" content="Entity Framework General Concepts Entity Framework is an object-relational mapper (ORM) that enables .NET developers to work with a database using domain-specific objects. It eliminates the need for most of the data-access code that developers usually need to write.
+Here&rsquo;s a high-level overview of how Entity Framework works:
+You design your domain model classes in your .NET application, with each class representing a table in your database.
+You use Entity Framework to create a mapping between your domain model classes and the corresponding tables in the database."/>
+<meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
+<meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rostrowicki.github.io/posts/csharp-entity-framework/" /><link rel="prev" href="http://rostrowicki.github.io/posts/csharp-boxing-unboxing/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Csharp Entity Framework",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rostrowicki.github.io\/posts\/csharp-entity-framework\/"
+        },"genre": "posts","wordcount":  868 ,
+        "url": "http:\/\/rostrowicki.github.io\/posts\/csharp-entity-framework\/","datePublished": "2022-12-18T15:51:42+01:00","dateModified": "2022-12-18T15:51:42+01:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Rob"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="rostrowicki"><span class="header-title-pre"><i class='fa-solid fa-shuttle-space'></i></span>https://rostrowicki.github.io</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"><i class='fa fa-home'></i>  </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/tools/"> Tools </a><a class="menu-item" href="/bookmarks/"> Bookmarks </a><a class="menu-item" href="https://github.com/rostrowicki" rel="noopener noreffer" target="_blank"><i class='fa-brands fa-github'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="rostrowicki"><span class="header-title-pre"><i class='fa-solid fa-shuttle-space'></i></span>https://rostrowicki.github.io</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title=""><i class='fa fa-home'></i></a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/tools/" title="">Tools</a><a class="menu-item" href="/bookmarks/" title="">Bookmarks</a><a class="menu-item" href="https://github.com/rostrowicki" title="" rel="noopener noreffer" target="_blank"><i class='fa-brands fa-github'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Csharp Entity Framework</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Rob</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-12-18">2022-12-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;868 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;5 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#general-concepts">General Concepts</a></li>
+    <li><a href="#edm">EDM</a></li>
+    <li><a href="#decorators">Decorators</a></li>
+    <li><a href="#xml-configuration">XML Configuration</a></li>
+    <li><a href="#edmx-file-example">EDMX file example</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="entity-framework">Entity Framework</h1>
+<h2 id="general-concepts">General Concepts</h2>
+<p>Entity Framework is an object-relational mapper (ORM) that enables .NET developers to work with a database using domain-specific objects. It eliminates the need for most of the data-access code that developers usually need to write.</p>
+<p>Here&rsquo;s a high-level overview of how Entity Framework works:</p>
+<p>You design your domain model classes in your .NET application, with each class representing a table in your database.</p>
+<p>You use Entity Framework to create a mapping between your domain model classes and the corresponding tables in the database. This mapping is stored in an XML file called a &ldquo;EDMX&rdquo; (Entity Data Model XML) file.</p>
+<p>You use Entity Framework to query the database and retrieve data, which is then materialized as objects in your application.</p>
+<p>You can modify the objects in your application and use Entity Framework to persist those changes back to the database.</p>
+<p>Overall, Entity Framework simplifies data access by providing a higher-level abstraction over the database, allowing you to work with data using familiar object-oriented concepts.</p>
+<h2 id="edm">EDM</h2>
+<p>An Entity Data Model (EDM) is a conceptual model that describes the structure of a database in terms of the entities, relationships, and actions that can be performed on it. An EDM is typically used to design a database that will be used by an application.</p>
+<p>An Entity Data Model XML (EDMX) file is an XML file that defines an EDM and its mapping to a database. It is a combination of three things:</p>
+<p>A conceptual model: This is a high-level view of the data and the relationships between entities. It is defined using Entity Data Model (EDM) concepts such as entities, properties, and relationships.</p>
+<p>A storage model: This is a low-level view of the database schema, including tables, columns, and keys. It is used to map the conceptual model to the database schema.</p>
+<p>Mappings: These define how the conceptual model maps to the storage model. They specify how the entities and properties in the conceptual model map to tables and columns in the storage model.</p>
+<p>When you use Entity Framework to query the database, the EDMX file is used to translate your queries into the appropriate SQL statements for the database. When you update the data in your application, the EDMX file is used to translate your updates into the appropriate SQL statements for the database.</p>
+<p>Overall, the EDMX file is a key part of Entity Framework and plays a central role in mapping between the conceptual model and the database schema, as well as in translating queries and updates between the two.</p>
+<h2 id="decorators">Decorators</h2>
+<p>In Entity Framework, decorators are attributes that you can apply to your domain model classes and properties to provide additional information to Entity Framework. Decorators are used to specify various aspects of how Entity Framework should map your domain model classes and properties to the database.</p>
+<p>Here are some examples of decorators that are commonly used in Entity Framework:</p>
+<p>[Table]: This decorator is used to specify the table in the database that a class should be mapped to.</p>
+<p>[Column]: This decorator is used to specify the column in the database that a property should be mapped to.</p>
+<p>[Key]: This decorator is used to specify the primary key column for a table.</p>
+<p>[ForeignKey]: This decorator is used to specify a foreign key column that is used to create a relationship between two tables.</p>
+<p>[NotMapped]: This decorator is used to specify that a property should not be mapped to a column in the database.</p>
+<p>Decorators are just one way to configure the mapping between your domain model classes and the database in Entity Framework. You can also use a separate XML file or code-based configuration to specify the mapping.</p>
+<h2 id="xml-configuration">XML Configuration</h2>
+<p>To use a separate XML file for mapping in Entity Framework, you will need to create an EDMX file and specify the mapping between your domain model classes and the database schema in the Mappings section of the file. You can then use Entity Framework to read the EDMX file and use the mapping information it contains to query and update the database.</p>
+<p>Overall, using a separate XML file for mapping can be a convenient way to specify the mapping between your domain model classes and the database in Entity Framework, especially if you have a complex mapping that cannot be easily expressed using decorators or code-based configuration.</p>
+<h2 id="edmx-file-example">EDMX file example</h2>
+<p>Here is an example of an EDMX file that maps a simple domain model to a database:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-XML" data-lang="XML"><span style="display:flex;"><span><span style="color:#75715e">&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;edmx:Edmx</span> <span style="color:#a6e22e">Version=</span><span style="color:#e6db74">&#34;4.0&#34;</span> <span style="color:#a6e22e">xmlns:edmx=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/ado/2009/11/edmx&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;edmx:Designer&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;edmx:Connection&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;DesignerInfoPropertySet&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;DesignerProperty</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;MetadataArtifactProcessing&#34;</span> <span style="color:#a6e22e">Value=</span><span style="color:#e6db74">&#34;EmbedInOutputAssembly&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/DesignerInfoPropertySet&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/edmx:Connection&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;edmx:Options&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;DesignerInfoPropertySet&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;DesignerProperty</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;ValidateOnBuild&#34;</span> <span style="color:#a6e22e">Value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;DesignerProperty</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;EnablePluralization&#34;</span> <span style="color:#a6e22e">Value=</span><span style="color:#e6db74">&#34;True&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;DesignerProperty</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;IncludeForeignKeysInModel&#34;</span> <span style="color:#a6e22e">Value=</span><span style="color:#e6db74">&#34;True&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/DesignerInfoPropertySet&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/edmx:Options&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;edmx:Diagrams</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/edmx:Designer&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;edmx:Runtime&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;edmx:ConceptualModels&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Schema</span> <span style="color:#a6e22e">Namespace=</span><span style="color:#e6db74">&#34;ExampleModel&#34;</span> <span style="color:#a6e22e">Alias=</span><span style="color:#e6db74">&#34;Self&#34;</span> <span style="color:#a6e22e">xmlns:annotation=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/ado/2009/02/edm/annotation&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/ado/2009/11/edm&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;EntityType</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Customer&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Key&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;PropertyRef</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Id&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/Key&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Id&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;Int32&#34;</span> <span style="color:#a6e22e">Nullable=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">annotation:StoreGeneratedPattern=</span><span style="color:#e6db74">&#34;Identity&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Name&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;String&#34;</span> <span style="color:#a6e22e">MaxLength=</span><span style="color:#e6db74">&#34;50&#34;</span> <span style="color:#a6e22e">Unicode=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">FixedLength=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Email&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;String&#34;</span> <span style="color:#a6e22e">MaxLength=</span><span style="color:#e6db74">&#34;255&#34;</span> <span style="color:#a6e22e">Unicode=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#a6e22e">FixedLength=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/EntityType&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;EntityType</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Order&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Key&gt;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#f92672">&lt;PropertyRef</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Id&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;/Key&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Id&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;Int32&#34;</span> <span style="color:#a6e22e">Nullable=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#a6e22e">annotation:StoreGeneratedPattern=</span><span style="color:#e6db74">&#34;Identity&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Total&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;Decimal&#34;</span> <span style="color:#a6e22e">Precision=</span><span style="color:#e6db74">&#34;18&#34;</span> <span style="color:#a6e22e">Scale=</span><span style="color:#e6db74">&#34;2&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;OrderDate&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;DateTime&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;Property</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;CustomerId&#34;</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;Int32&#34;</span> <span style="color:#a6e22e">Nullable=</span><span style="color:#e6db74">&#34;false&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;NavigationProperty</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Customer&#34;</span> <span style="color:#a6e22e">Relationship=</span><span style="color:#e6db74">&#34;ExampleModel.CustomerOrder&#34;</span> <span style="color:#a6e22e">FromRole=</span><span style="color:#e6db74">&#34;Order&#34;</span> <span style="color:#a6e22e">ToRole=</span><span style="color:#e6db74">&#34;Customer&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/EntityType&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;Association</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;CustomerOrder&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;End</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;ExampleModel.Customer&#34;</span> <span style="color:#a6e22e">Role=</span><span style="color:#e6db74">&#34;Customer&#34;</span> <span style="color:#a6e22e">Multiplicity=</span><span style="color:#e6db74">&#34;1&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;End</span> <span style="color:#a6e22e">Type=</span><span style="color:#e6db74">&#34;ExampleModel.Order&#34;</span> <span style="color:#a6e22e">Role=</span><span style="color:#e6db74">&#34;Order&#34;</span> <span style="color:#a6e22e">Multiplicity=</span><span style="color:#e6db74">&#34;*&#34;</span> <span style="color:#f92672">/&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;/Association&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;/Schema&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;/edmx:ConceptualModels&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&lt;edmx:Mappings&gt;</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&lt;Mapping</span> <span style="color:#a6e22e">Space=</span><span style="color:#e6db74">&#34;C-S&#34;</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;http://schemas.microsoft.com/ado/2009/11/mapping/cs&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&lt;EntityContainerMapping</span> <span style="color:#a6e22e">StorageEntityContainer=</span><span style="color:#e6db74">&#34;ExampleModelStoreContainer&#34;</span> <span style="color:#a6e22e">CdmEntityContainer=</span><span style="color:#e6db74">&#34;ExampleModelContainer&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&lt;EntitySetMapping</span> <span style="color:#a6e22e">Name=</span><span style="color:#e6db74">&#34;Customers&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span></code></pre></div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-12-18</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://rostrowicki.github.io/posts/csharp-entity-framework/" data-title="Csharp Entity Framework"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://rostrowicki.github.io/posts/csharp-entity-framework/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://rostrowicki.github.io/posts/csharp-entity-framework/" data-title="Csharp Entity Framework"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://rostrowicki.github.io/posts/csharp-entity-framework/" data-title="Csharp Entity Framework"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://rostrowicki.github.io/posts/csharp-entity-framework/" data-title="Csharp Entity Framework"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/csharp-boxing-unboxing/" class="prev" rel="prev" title="csharp Boxing Unboxing"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>csharp Boxing Unboxing</a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

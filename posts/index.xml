@@ -3,7 +3,18 @@
         <title>All Posts - rostrowicki</title>
         <link>http://rostrowicki.github.io/posts/</link>
         <description>All Posts | rostrowicki</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sat, 17 Dec 2022 17:33:49 &#43;0100</lastBuildDate><atom:link href="http://rostrowicki.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 18 Dec 2022 15:51:42 &#43;0100</lastBuildDate><atom:link href="http://rostrowicki.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Csharp Entity Framework</title>
+    <link>http://rostrowicki.github.io/posts/csharp-entity-framework/</link>
+    <pubDate>Sun, 18 Dec 2022 15:51:42 &#43;0100</pubDate>
+    <author>Rob</author>
+    <guid>http://rostrowicki.github.io/posts/csharp-entity-framework/</guid>
+    <description><![CDATA[Entity Framework General Concepts Entity Framework is an object-relational mapper (ORM) that enables .NET developers to work with a database using domain-specific objects. It eliminates the need for most of the data-access code that developers usually need to write.
+Here&rsquo;s a high-level overview of how Entity Framework works:
+You design your domain model classes in your .NET application, with each class representing a table in your database.
+You use Entity Framework to create a mapping between your domain model classes and the corresponding tables in the database.]]></description>
+</item>
+<item>
     <title>csharp Boxing Unboxing</title>
     <link>http://rostrowicki.github.io/posts/csharp-boxing-unboxing/</link>
     <pubDate>Sat, 17 Dec 2022 17:33:49 &#43;0100</pubDate>
@@ -91,14 +102,6 @@ Markdown Cheatsheet
 Commands # Hugo server &gt; hugo server -D # Build static pages: &gt; hugo -D Installation Follow instructions: https://gohugo.io/getting-started/installing
 Releases: https://github.com/gohugoio/hugo/releases
 # verify installation &gt; hugo version # Create new site &gt; hugo new site [SITE_NAME] ]]></description>
-</item>
-<item>
-    <title>Hello World</title>
-    <link>http://rostrowicki.github.io/posts/hello-world/</link>
-    <pubDate>Mon, 25 Jul 2022 14:42:33 &#43;0200</pubDate>
-    <author>Author</author>
-    <guid>http://rostrowicki.github.io/posts/hello-world/</guid>
-    <description><![CDATA[Hello world!]]></description>
 </item>
 </channel>
 </rss>
