@@ -2,14 +2,20 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>http://rostrowicki.github.io/about/</loc><lastmod>2024-07-06T11:14:28&#43;02:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/nhibernate-join-queryover/</loc><lastmod>2023-07-06T11:25:57&#43;02:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/</loc><lastmod>2023-07-06T11:25:57&#43;02:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/</loc><lastmod>2023-07-06T11:25:57&#43;02:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/</loc><lastmod>2023-03-06T11:19:37&#43;02:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/mssql-indexes/</loc><lastmod>2022-12-22T16:16:59&#43;01:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/mssql-execution-plan/</loc><lastmod>2022-12-21T16:12:43&#43;01:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/csharp-exceptions/</loc><lastmod>2022-12-20T16:06:40&#43;01:00</lastmod></url><url>
+            <loc>http://rostrowicki.github.io/posts/csharp-collections/</loc><lastmod>2022-12-19T15:54:17&#43;01:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/csharp-entity-framework/</loc><lastmod>2022-12-18T15:51:42&#43;01:00</lastmod></url><url>
-            <loc>http://rostrowicki.github.io/posts/</loc><lastmod>2022-12-18T15:51:42&#43;01:00</lastmod></url><url>
-            <loc>http://rostrowicki.github.io/</loc><lastmod>2022-12-18T15:51:42&#43;01:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/csharp-boxing-unboxing/</loc><lastmod>2022-12-17T17:33:49&#43;01:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/alpine-home-server/</loc><lastmod>2022-11-15T18:49:54&#43;01:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/fedora-home-server/</loc><lastmod>2022-09-27T18:02:44&#43;02:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/rabbitmq-cheatsheet/</loc><lastmod>2022-08-07T13:53:33&#43;02:00</lastmod></url><url>
-            <loc>http://rostrowicki.github.io/about/</loc><lastmod>2022-07-26T15:14:28&#43;02:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/bookmarks/</loc><lastmod>2022-07-26T15:14:28&#43;02:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/tools/</loc><lastmod>2022-07-26T15:14:28&#43;02:00</lastmod></url><url>
             <loc>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</loc><lastmod>2022-07-26T15:07:13&#43;02:00</lastmod></url><url>

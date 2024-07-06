@@ -3,9 +3,71 @@
         <title>rostrowicki</title>
         <link>http://rostrowicki.github.io/</link>
         <description>This is my cool site</description>
-        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 18 Dec 2022 15:51:42 &#43;0100</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Thu, 06 Jul 2023 11:25:57 &#43;0200</lastBuildDate>
             <atom:link href="http://rostrowicki.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Nhibernate Join Queryover</title>
+    <link>http://rostrowicki.github.io/posts/nhibernate-join-queryover/</link>
+    <pubDate>Thu, 06 Jul 2023 11:25:57 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/nhibernate-join-queryover/</guid>
+    <description><![CDATA[When working with NHibernate and QueryOver, you can join multiple tables using the JoinAlias method. Let&rsquo;s say you have the following entities: Person, PersonFavorites, PersonCompany, and Company. You want to join them based on their relationships. Here&rsquo;s an example of how to do that:
+Define your entities (similar to the previous example):
+public class Person { public virtual int Id { get; set; } public virtual ICollection&lt;PersonFavorites&gt; Favorites { get; set; } public virtual ICollection&lt;PersonCompany&gt; Companies { get; set; } } public class PersonFavorites { public virtual Person Person { get; set; } public virtual Favorite Favorite { get; set; } } public class PersonCompany { public virtual Person Person { get; set; } public virtual Company Company { get; set; } } public class Company { public virtual int Id { get; set; } // Other properties.]]></description>
+</item>
+<item>
+    <title>Nhibernate Quick Reference Guide</title>
+    <link>http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/</link>
+    <pubDate>Mon, 06 Mar 2023 11:19:37 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/</guid>
+    <description><![CDATA[NHibernate Quick Reference Guide 1. Configuration and Session Factory Create Configuration:
+var configuration = new Configuration(); configuration.Configure(); Build Session Factory:
+var sessionFactory = configuration.BuildSessionFactory(); 2. Mapping Entities XML Mapping:
+&lt;hibernate-mapping xmlns=&#34;urn:nhibernate-mapping-2.2&#34;&gt; &lt;class name=&#34;Namespace.EntityClassName, AssemblyName&#34; table=&#34;TableName&#34;&gt; &lt;!-- Mapping properties here --&gt; &lt;/class&gt; &lt;/hibernate-mapping&gt; Fluent Mapping:
+public class EntityClassNameMap : ClassMapping&lt;EntityClassName&gt; { public EntityClassNameMap() { Table(&#34;TableName&#34;); // Mapping properties here } } 3. CRUD Operations Save or Update Entity:
+using (var session = sessionFactory.]]></description>
+</item>
+<item>
+    <title>MSSQL - Indexes</title>
+    <link>http://rostrowicki.github.io/posts/mssql-indexes/</link>
+    <pubDate>Thu, 22 Dec 2022 16:16:59 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/mssql-indexes/</guid>
+    <description><![CDATA[In Microsoft SQL Server, an index is a data structure that is used to improve the performance of queries by providing faster access to the data in a table. An index allows the database engine to quickly locate the rows in a table that match a particular search condition, rather than having to scan the entire table.
+There are several types of indexes in SQL Server, including:
+Clustered index A clustered index determines the physical order of the rows in a table and can only be created on one column per table.]]></description>
+</item>
+<item>
+    <title>MSSQL - Execution Plan</title>
+    <link>http://rostrowicki.github.io/posts/mssql-execution-plan/</link>
+    <pubDate>Wed, 21 Dec 2022 16:12:43 &#43;0100</pubDate>
+    <author>Rob</author>
+    <guid>http://rostrowicki.github.io/posts/mssql-execution-plan/</guid>
+    <description><![CDATA[General Information An execution plan in Microsoft SQL Server is a set of steps that the database engine follows to execute a SQL query. Execution plans are used by the database engine to determine the most efficient way to execute a query and can be used to troubleshoot performance issues.
+There are two types of execution plans in SQL Server:
+Estimated execution plan: An estimated execution plan is a graphical representation of the steps that the database engine estimates it will take to execute a query.]]></description>
+</item>
+<item>
+    <title>C# - Exceptions</title>
+    <link>http://rostrowicki.github.io/posts/csharp-exceptions/</link>
+    <pubDate>Tue, 20 Dec 2022 16:06:40 &#43;0100</pubDate>
+    <author>Author</author>
+    <guid>http://rostrowicki.github.io/posts/csharp-exceptions/</guid>
+    <description><![CDATA[In C#, an exception is an object that represents an error that occurs during the execution of a program. Exceptions are used to signal that an error has occurred and to provide information about the error.
+Exceptions in C# are represented by classes that derive from the System.Exception class. When an error occurs in a C# program, an exception object is created and thrown. The exception can then be caught and handled by the program.]]></description>
+</item>
+<item>
+    <title>C# - Collections</title>
+    <link>http://rostrowicki.github.io/posts/csharp-collections/</link>
+    <pubDate>Mon, 19 Dec 2022 15:54:17 &#43;0100</pubDate>
+    <author>Rob</author>
+    <guid>http://rostrowicki.github.io/posts/csharp-collections/</guid>
+    <description><![CDATA[General Information In C#, a collection is a group of objects that can be iterated over and manipulated as a single unit. There are several built-in collection types in C#, as well as many third-party libraries that provide additional collection types.
+Here is a list of the built-in collection types in C#:
+Array: An array is a fixed-size collection of items of a particular type. It provides fast random access to items, but slower insertion and removal of items.]]></description>
+</item>
+<item>
     <title>C# - Entity Framework</title>
     <link>http://rostrowicki.github.io/posts/csharp-entity-framework/</link>
     <pubDate>Sun, 18 Dec 2022 15:51:42 &#43;0100</pubDate>
@@ -43,67 +105,6 @@ Installation is taking about 10 minutes. For the rest you can follow instruction
     <author>Author</author>
     <guid>http://rostrowicki.github.io/posts/fedora-home-server/</guid>
     <description><![CDATA[How to How to install, start and connect to SSH Server on Fedora Linux $ sudo systemctl status sshd # if inactive... $ sudo systemctl enable sshd $ sudo systemctl start sshd # now should be active # try to connect from other machine.. $ ssh [remote_user_name]@x.x.x.x How to install docker-compose $ sudo curl -L &#34;https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)&#34; -o /usr/local/bin/docker-compose $ sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose $ sudo chmod +x /usr/bin/docker-compose Start PiHole $ docker-compose up -d Issues Cannot connect to docker daemon # check status $ sudo service docker status # if not running then.]]></description>
-</item>
-<item>
-    <title>RabbitMQ - Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/rabbitmq-cheatsheet/</link>
-    <pubDate>Sun, 07 Aug 2022 13:53:33 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/rabbitmq-cheatsheet/</guid>
-    <description><![CDATA[Prerequisites Install Docker Desktop
-Run Docker image docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management Management panel:
-http://localhost:15672/#/ ]]></description>
-</item>
-<item>
-    <title>K8S - Kubernetes Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:13 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/kubernetes-cheatsheet/</guid>
-    <description><![CDATA[Kubernetes is a powerful platform for deploying, scaling, and managing containerized applications. It allows you to easily deploy and manage applications across a cluster of servers, and provides features such as self-healing, automatic scaling, and rolling updates.
-There are several kubernetes commands that are commonly used to manage and interact with kubernetes clusters and resources. Here are some of the most useful and frequently used kubernetes commands:
-Most commonly used commands kubectl --help kubectl version kubectl cluster-info kubectl get all kubectl run [pod-name] --image [image-name] kubectl describe pod [pod-name] # delete current pod (might bring back a new replica if it has deployment resource created) kubectl delete [pod-name] kubectl delete -f file.]]></description>
-</item>
-<item>
-    <title>Docker - Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/docker-cheatsheet/</link>
-    <pubDate>Tue, 26 Jul 2022 15:07:05 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/docker-cheatsheet/</guid>
-    <description><![CDATA[Docker is a popular platform for building, deploying, and running applications using containers. It allows developers to package their applications and dependencies into lightweight containers, which can then be easily deployed and run on any platform that supports Docker.
-There are several docker commands that are commonly used to manage and interact with Docker containers and images. Here are some of the most useful and frequently used docker commands:
-docker run: This command is used to run a new container from an image.]]></description>
-</item>
-<item>
-    <title>Minikube Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/minikube-cheatsheet/</link>
-    <pubDate>Tue, 26 Jul 2022 15:06:59 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/minikube-cheatsheet/</guid>
-    <description><![CDATA[Minikube is a tool that allows you to run a single-node Kubernetes cluster locally on your machine. It is a great way to learn and experiment with Kubernetes without the need for a large, complex cluster.
-One of the key concepts of Minikube is the virtual machine (VM) that it runs on. Minikube uses a VM to create a self-contained environment in which to run the Kubernetes cluster. By default, Minikube uses the VirtualBox hypervisor to create the VM, but it can also use other hypervisors such as VMware Fusion and Hyper-V.]]></description>
-</item>
-<item>
-    <title>C# - Entity Framework Migrations - Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/ef-cheatsheet/</link>
-    <pubDate>Tue, 26 Jul 2022 15:06:41 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/ef-cheatsheet/</guid>
-    <description><![CDATA[Intro Entity Framework is a popular object-relational mapping (ORM) framework for .NET that allows developers to easily work with relational data using domain-specific objects. One of the key features of Entity Framework is its ability to manage database migrations, which allows you to update the structure of your database as your application evolves.
-Commands To use Entity Framework migrations, you need to use a set of commands that are provided by the Entity Framework tools.]]></description>
-</item>
-<item>
-    <title>Hugo - Cheatsheet</title>
-    <link>http://rostrowicki.github.io/posts/hugo-cheatsheet/</link>
-    <pubDate>Mon, 25 Jul 2022 14:49:26 &#43;0200</pubDate>
-    <author>Rob</author>
-    <guid>http://rostrowicki.github.io/posts/hugo-cheatsheet/</guid>
-    <description><![CDATA[HUGO Cheatsheet Project Homepage: https://gohugo.io/
-Content &gt; hugo new posts/my-first-post.md Drafts do not get deployed; once you finish a post, update the header of the post to say draft: false.
-Markdown Cheatsheet
-Commands # Hugo server &gt; hugo server -D # Build static pages: &gt; hugo -D Installation Follow instructions: https://gohugo.io/getting-started/installing
-Releases: https://github.com/gohugoio/hugo/releases
-# verify installation &gt; hugo version # Create new site &gt; hugo new site [SITE_NAME] ]]></description>
 </item>
 </channel>
 </rss>

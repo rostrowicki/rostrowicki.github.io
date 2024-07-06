@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Nhibernate Quick Reference Guide - rostrowicki</title><meta name="Description" content="This is my cool site"><meta property="og:title" content="Nhibernate Quick Reference Guide" />
+<meta property="og:description" content="NHibernate Quick Reference Guide 1. Configuration and Session Factory Create Configuration:
+var configuration = new Configuration(); configuration.Configure(); Build Session Factory:
+var sessionFactory = configuration.BuildSessionFactory(); 2. Mapping Entities XML Mapping:
+&lt;hibernate-mapping xmlns=&#34;urn:nhibernate-mapping-2.2&#34;&gt; &lt;class name=&#34;Namespace.EntityClassName, AssemblyName&#34; table=&#34;TableName&#34;&gt; &lt;!-- Mapping properties here --&gt; &lt;/class&gt; &lt;/hibernate-mapping&gt; Fluent Mapping:
+public class EntityClassNameMap : ClassMapping&lt;EntityClassName&gt; { public EntityClassNameMap() { Table(&#34;TableName&#34;); // Mapping properties here } } 3. CRUD Operations Save or Update Entity:
+using (var session = sessionFactory." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-06T11:19:37+02:00" />
+<meta property="article:modified_time" content="2023-03-06T11:19:37+02:00" /><meta property="og:site_name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Nhibernate Quick Reference Guide"/>
+<meta name="twitter:description" content="NHibernate Quick Reference Guide 1. Configuration and Session Factory Create Configuration:
+var configuration = new Configuration(); configuration.Configure(); Build Session Factory:
+var sessionFactory = configuration.BuildSessionFactory(); 2. Mapping Entities XML Mapping:
+&lt;hibernate-mapping xmlns=&#34;urn:nhibernate-mapping-2.2&#34;&gt; &lt;class name=&#34;Namespace.EntityClassName, AssemblyName&#34; table=&#34;TableName&#34;&gt; &lt;!-- Mapping properties here --&gt; &lt;/class&gt; &lt;/hibernate-mapping&gt; Fluent Mapping:
+public class EntityClassNameMap : ClassMapping&lt;EntityClassName&gt; { public EntityClassNameMap() { Table(&#34;TableName&#34;); // Mapping properties here } } 3. CRUD Operations Save or Update Entity:
+using (var session = sessionFactory."/>
+<meta name="application-name" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular">
+<meta name="apple-mobile-web-app-title" content="FROMSOFT - Full-stack, DevOps, .Net C#, Angular"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" /><link rel="prev" href="http://rostrowicki.github.io/posts/mssql-indexes/" /><link rel="next" href="http://rostrowicki.github.io/posts/nhibernate-join-queryover/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Nhibernate Quick Reference Guide",
+        "inLanguage": "en-us",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/rostrowicki.github.io\/posts\/nhibernate-quick-reference-guide\/"
+        },"genre": "posts","wordcount":  219 ,
+        "url": "http:\/\/rostrowicki.github.io\/posts\/nhibernate-quick-reference-guide\/","datePublished": "2023-03-06T11:19:37+02:00","dateModified": "2023-03-06T11:19:37+02:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Author"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="rostrowicki"><span class="header-title-pre"><i class='fa-solid fa-shuttle-space'></i></span>https://rostrowicki.github.io</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/"><i class='fa fa-home'></i>  </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="/tools/"> Tools </a><a class="menu-item" href="/bookmarks/"> Bookmarks </a><a class="menu-item" href="https://github.com/rostrowicki" rel="noopener noreffer" target="_blank"><i class='fa-brands fa-github'></i>  </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="rostrowicki"><span class="header-title-pre"><i class='fa-solid fa-shuttle-space'></i></span>https://rostrowicki.github.io</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/" title=""><i class='fa fa-home'></i></a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="/tools/" title="">Tools</a><a class="menu-item" href="/bookmarks/" title="">Bookmarks</a><a class="menu-item" href="https://github.com/rostrowicki" title="" rel="noopener noreffer" target="_blank"><i class='fa-brands fa-github'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Nhibernate Quick Reference Guide</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Author</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-03-06">2023-03-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;219 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#nhibernate-quick-reference-guide">NHibernate Quick Reference Guide</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="nhibernate-quick-reference-guide">NHibernate Quick Reference Guide</h3>
+<h4 id="1-configuration-and-session-factory">1. Configuration and Session Factory</h4>
+<ul>
+<li>
+<p>Create Configuration:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> configuration = <span style="color:#66d9ef">new</span> Configuration();
+</span></span><span style="display:flex;"><span>configuration.Configure();
+</span></span></code></pre></div></li>
+<li>
+<p>Build Session Factory:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> sessionFactory = configuration.BuildSessionFactory();
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="2-mapping-entities">2. Mapping Entities</h4>
+<ul>
+<li>
+<p>XML Mapping:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-xml" data-lang="xml"><span style="display:flex;"><span><span style="color:#f92672">&lt;hibernate-mapping</span> <span style="color:#a6e22e">xmlns=</span><span style="color:#e6db74">&#34;urn:nhibernate-mapping-2.2&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;class</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;Namespace.EntityClassName, AssemblyName&#34;</span> <span style="color:#a6e22e">table=</span><span style="color:#e6db74">&#34;TableName&#34;</span><span style="color:#f92672">&gt;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">&lt;!-- Mapping properties here --&gt;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&lt;/class&gt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">&lt;/hibernate-mapping&gt;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>Fluent Mapping:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EntityClassNameMap</span> : ClassMapping&lt;EntityClassName&gt;
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> EntityClassNameMap()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        Table(<span style="color:#e6db74">&#34;TableName&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Mapping properties here</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="3-crud-operations">3. CRUD Operations</h4>
+<ul>
+<li>
+<p>Save or Update Entity:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> session = sessionFactory.OpenSession())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> transaction = session.BeginTransaction())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    session.SaveOrUpdate(entity);
+</span></span><span style="display:flex;"><span>    transaction.Commit();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Get Entity by ID:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> entity = session.Get&lt;EntityClassName&gt;(id);
+</span></span></code></pre></div></li>
+<li>
+<p>Update Entity:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> session = sessionFactory.OpenSession())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> transaction = session.BeginTransaction())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    session.Update(entity);
+</span></span><span style="display:flex;"><span>    transaction.Commit();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>Delete Entity:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> session = sessionFactory.OpenSession())
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> (<span style="color:#66d9ef">var</span> transaction = session.BeginTransaction())
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    session.Delete(entity);
+</span></span><span style="display:flex;"><span>    transaction.Commit();
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="4-querying">4. Querying</h4>
+<ul>
+<li>
+<p>HQL (Hibernate Query Language):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> query = session.CreateQuery(<span style="color:#e6db74">&#34;from EntityClassName where Property = :value&#34;</span>);
+</span></span><span style="display:flex;"><span>query.SetParameter(<span style="color:#e6db74">&#34;value&#34;</span>, propertyValue);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">var</span> results = query.List&lt;EntityClassName&gt;();
+</span></span></code></pre></div></li>
+<li>
+<p>Criteria API:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> results = session.CreateCriteria&lt;EntityClassName&gt;()
+</span></span><span style="display:flex;"><span>                    .Add(Restrictions.Eq(<span style="color:#e6db74">&#34;Property&#34;</span>, propertyValue))
+</span></span><span style="display:flex;"><span>                    .List&lt;EntityClassName&gt;();
+</span></span></code></pre></div></li>
+<li>
+<p>LINQ:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> results = session.Query&lt;EntityClassName&gt;()
+</span></span><span style="display:flex;"><span>                    .Where(e =&gt; e.Property == propertyValue)
+</span></span><span style="display:flex;"><span>                    .ToList();
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="5-transactions">5. Transactions</h4>
+<ul>
+<li>
+<p>Begin Transaction:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> transaction = session.BeginTransaction();
+</span></span></code></pre></div></li>
+<li>
+<p>Commit Transaction:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>transaction.Commit();
+</span></span></code></pre></div></li>
+<li>
+<p>Rollback Transaction:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>transaction.Rollback();
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="6-lazy-loading">6. Lazy Loading</h4>
+<ul>
+<li>Enable Lazy Loading in Configuration:
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>configuration.SetProperty(<span style="color:#e6db74">&#34;proxyfactory.factory_class&#34;</span>, <span style="color:#e6db74">&#34;NHibernate.ByteCode.LinFu.ProxyFactoryFactory, NHibernate.ByteCode.LinFu&#34;</span>);
+</span></span></code></pre></div></li>
+</ul>
+<h4 id="7-fetch-strategies">7. Fetch Strategies</h4>
+<ul>
+<li>
+<p>Eager Loading:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>session.Query&lt;EntityClassName&gt;().Fetch(x =&gt; x.Property).ToList();
+</span></span></code></pre></div></li>
+<li>
+<p>Lazy Loading:
+By default, NHibernate uses lazy loading for associated entities.</p>
+</li>
+</ul>
+<p>This NHibernate quick reference guide should help you get started with NHibernate ORM.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-03-06</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" data-title="Nhibernate Quick Reference Guide"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" data-title="Nhibernate Quick Reference Guide"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" data-title="Nhibernate Quick Reference Guide"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="http://rostrowicki.github.io/posts/nhibernate-quick-reference-guide/" data-title="Nhibernate Quick Reference Guide"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/mssql-indexes/" class="prev" rel="prev" title="MSSQL - Indexes"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MSSQL - Indexes</a>
+            <a href="/posts/nhibernate-join-queryover/" class="next" rel="next" title="Nhibernate Join Queryover">Nhibernate Join Queryover<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
